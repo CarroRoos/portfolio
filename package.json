@@ -1,0 +1,13 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio site",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build necessary for static site'",
+    "start": "echo 'No start necessary for static site'"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
