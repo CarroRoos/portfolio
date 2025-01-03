@@ -5,9 +5,13 @@
   "main": "index.html",
   "scripts": {
     "build": "echo 'No build necessary for static site'",
-    "start": "echo 'No start necessary for static site'"
+    "start": "http-server ./",
+    "dev": "http-server ./"
   },
   "engines": {
     "node": "18.x"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }

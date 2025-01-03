@@ -87,13 +87,19 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+
+  .profile-img-container {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
 }
 
 /* ---------- Profilbild (Hero-sektionen) ---------- */
 
 .profile-img-container {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   overflow: hidden;
   margin: 0 auto;
 }
