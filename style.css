@@ -226,6 +226,75 @@ h1 {
   padding: 20px;
 }
 
+/* ---------- Kompetenser-sektionen ---------- */
+
+#kompetenser {
+  background-color: #ffffff;
+  padding: 40px 0;
+}
+
+.kompetens-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.kompetens-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #d3baac;
+}
+
+.kompetens-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.kompetens-card:hover::before {
+  background-color: #c3a08c;
+}
+
+.kompetens-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #efe1d9;
+}
+
+.kompetens-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.kompetens-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.kompetens-list i {
+  color: #d3baac;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .kompetens-card {
+    margin-bottom: 20px;
+  }
+}
+
 /* ---------- Andra generella stilar ---------- */
 
 .rounded-circle {
