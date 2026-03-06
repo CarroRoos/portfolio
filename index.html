@@ -1,15 +1,17 @@
-<html lang="sv"></html>
+<!doctype html>
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carolines portfolio</title>
+    <title>Caroline Roos Bergman – Portfolio</title>
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style.css" />
-
+    <!-- Bootstrap + Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,474 +22,607 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <header class="header">
-      <nav class="navbar navbar-expand-md navbar-light custom-navbar">
-        <div class="container-fluid">
-          <div class="navbar-brand custom-navbar-brand" href="#">
-            <a class="nav-link" href="#home">Caroline Roos Bergman</a>
-          </div>
+  <body class="crb-body">
+    <!-- NAV -->
+    <header class="crb-header">
+      <nav class="navbar navbar-expand-md crb-navbar">
+        <div class="container">
+          <a class="navbar-brand crb-brand" href="#home">Caroline Roos Bergman</a>
+
           <button
-            class="navbar-toggler"
+            class="navbar-toggler crb-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
+            data-bs-target="#crbNav"
+            aria-controls="crbNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <div class="navbar-toggler-icon"></div>
+            <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNavAltMarkup"
-          >
-            <div class="navbar-nav custom-navbar-nav">
+          <div class="collapse navbar-collapse justify-content-end" id="crbNav">
+            <div class="navbar-nav crb-navlinks">
               <a class="nav-link" href="#om">Om mig</a>
+              <a class="nav-link" href="#kompetenser">Kompetenser</a>
               <a class="nav-link" href="#portfolio">Portfolio</a>
-            
-              <a class="nav-link" href="#contact">Kontakta mig</a>
+              <a class="nav-link" href="#contact">Kontakt</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <section class="hero py-5 fade-in">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 d-flex justify-content-center">
-            <div class="profile-img-container">
-              <img
-                src="./img/profileImg.png"
-                alt="Ett foto"
-                class="rounded-circle img-fluid profile-img"
-              />
+    <!-- HERO -->
+    <main id="home" class="crb-main">
+      <section class="crb-hero">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-12 col-lg-6 order-2 order-lg-1">
+              <p class="crb-kicker">Frontend • UX/UI • Content</p>
+              <h1 class="crb-h1">
+                Hej <span class="crb-wave">👋</span><br />
+                Jag är <span class="crb-name">Caroline</span>
+              </h1>
+
+              <p class="crb-lead">
+                Frontendutvecklare med extra fokus på UX och digital tillgänglighet.
+                Jag bygger lösningar som känns enkla att använda – och ser bra ut.
+              </p>
+
+              <div class="crb-badges">
+                <span class="crb-badge">UX/UI</span>
+                <span class="crb-badge">WCAG</span>
+                <span class="crb-badge">React/TS</span>
+                <span class="crb-badge">WordPress</span>
+                <span class="crb-badge">Copy/Content</span>
+              </div>
+
+              <div class="crb-cta">
+                <a class="crb-btn crb-btn-primary" href="#portfolio">
+                  Se projekt <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                <a class="crb-btn crb-btn-ghost" href="#contact">
+                  Kontakta mig
+                </a>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6 order-1 order-lg-2">
+              <div class="crb-photoWrap">
+                <div class="crb-photoGlow"></div>
+                <img
+                  src="./img/profileImg.png"
+                  alt="Porträtt av Caroline"
+                  class="crb-photo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OM MIG -->
+      <section id="om" class="crb-section">
+        <div class="container">
+          <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-5">
+              <h2 class="crb-h2">Om mig</h2>
+              <p class="crb-muted">
+                Jag kombinerar teknisk kompetens med design och kommunikation.
+                Tidigare har jag arbetat som lärare, digital redaktör/producent och illustratör.
+              </p>
+            </div>
+
+            <div class="col-12 col-lg-7">
+              <div class="crb-card crb-card--soft">
+                <p class="mb-3">
+                  Med en teknisk grund inom <strong>HTML, CSS, JavaScript, React och TypeScript</strong>
+                  brinner jag för att skapa användarupplevelser som kombinerar design med funktion.
+                </p>
+                <p class="mb-0">
+                  Mitt fokus på <strong>UX/UI</strong> och <strong>tillgänglighet</strong> gör att jag alltid strävar efter
+                  att skapa lösningar som känns rätt för användaren.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KOMPETENSER -->
+      <section id="kompetenser" class="crb-section crb-section--alt">
+        <div class="container">
+          <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+            <div>
+              <h2 class="crb-h2 mb-1">Kompetenser</h2>
+              <p class="crb-muted mb-0">Klicka på en kompetens för mer info och exempel.</p>
             </div>
           </div>
 
-          <div class="col-md-6">
-            <h1>Hej 👋</h1>
-            <p>
-              Jag heter Caroline och är en frontend utvecklare med ett stort intresse för UX och digital tillgänglighet.
-            </p>
-            <p>
-              Med en teknisk grund inom HTML, CSS, JavaScript, React och TypeScript, 
-              brinner jag särskilt för att skapa användarupplevelser som kombinerar design med funktion. 
-              Mitt extra fokus på UX/UI gör att jag alltid strävar efter att skapa lösningar som inte bara fungerar utan 
-              också känns rätt för användaren. 
-            </p>
-            <p>
-              Tidigare har jag arbetat som lärare, förstelärare, digital redaktör/producent och som 
-              illustratör. Dessa erfarenheter har gett mig en förmåga att
-               kombinera teknisk kompetens med kreativitet och förståelse för användarens behov.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="row g-4">
+            <!-- UX -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="UX / UI & Tillgänglighet"
+                data-desc="Jag jobbar med research, informationsarkitektur, wireframes, prototyper och UI-design – med extra fokus på WCAG och inkluderande design."
+                data-tags="UX,UI,WCAG 2.2,Figma,Prototyping,Designsystem"
+                data-projects="Recept hemsida (React/Next) • Massagestudio (UX/UI) • Bokningsapp (UX/UI)"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-pencil-ruler"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">UX / UI</h3>
+                  <p class="crb-skillSub">Research • Flöden • WCAG</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
 
+            <!-- Foto -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="Foto"
+                data-desc="Jag fotograferar för webb och content – med fokus på bildspråk, komposition och material som funkar i digitala kanaler."
+                data-tags="Bildspråk,Komposition,Webbformat,Content"
+                data-projects="(Lägg till dina exempel här: porträtt, kampanjbilder, sociala medier)"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-camera"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">Foto</h3>
+                  <p class="crb-skillSub">Bildspråk • Webb</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
 
- 
-<section id="kompetenser" class="py-5 fade-in">
-  <div class="container">
-    <h2 class="mb-5">Kompetenser 💎</h2>
-    
-    <div class="row">
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="kompetens-card h-100">
-          <div class="card-body">
-            <h5 class="kompetens-title">Design</h5>
-            <ul class="kompetens-list">
-              <li><i class="fas fa-check"></i> UX/UI</li>
-              <li><i class="fas fa-check"></i> WCAG 2.2</li>
-              <li><i class="fas fa-check"></i> Figma</li>
-              <li><i class="fas fa-check"></i> Illustration</li>
-            </ul>
+            <!-- Film -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="Film"
+                data-desc="Planering, inspelning och klipp för sociala medier och webb – gärna kortformat med tydliga budskap."
+                data-tags="Storyboard,Kortformat,Klipp,Publicering"
+                data-projects="(Lägg till exempel: reels, produktvideo, behind the scenes)"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-video"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">Film</h3>
+                  <p class="crb-skillSub">Inspelning • Klipp</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
+
+            <!-- Content -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="Content"
+                data-desc="Jag skapar och paketerar innehåll som matchar målgrupp och kanal: struktur, tonalitet, format och publicering."
+                data-tags="Contentstrategi,SoMe,Redaktionellt,Planering"
+                data-projects="(Exempel: innehållskalender, kampanjupplägg, redaktionell plan)"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-layer-group"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">Content</h3>
+                  <p class="crb-skillSub">Strategi • Format</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
+
+            <!-- Copywriting -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="Copywriting"
+                data-desc="Jag skriver copy som är tydlig, varm och målgruppsanpassad – med fokus på rubriker, mikrocopy, CTA och begriplighet."
+                data-tags="Tonalitet,Mikrocopy,CTA,UX-writing"
+                data-projects="Digital producent & Copywriter (Gleerups) • Webbcopy i projekt"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-pen-nib"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">Copywriting</h3>
+                  <p class="crb-skillSub">UX-writing • CTA</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
+
+            <!-- Programmering -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="Programmering (JS / React)"
+                data-desc="Frontendutveckling med fokus på komponenttänk, prestanda och en bra användarupplevelse."
+                data-tags="HTML,CSS,JavaScript,React,TypeScript,Next.js"
+                data-projects="Filmbank • Hitta en restaurang • Webbshop • Recept hemsida"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-code"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">Programmering</h3>
+                  <p class="crb-skillSub">JS • React • TS</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
+
+            <!-- CMS -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="CMS (WordPress)"
+                data-desc="Jag bygger och redigerar innehåll i CMS och har erfarenhet av WordPress-produktion och innehållsflöden."
+                data-tags="WordPress,Content,Redigering"
+                data-projects="WordPress-projekt (från scratch) • Byrå/praktik"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-th-large"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">CMS</h3>
+                  <p class="crb-skillSub">WordPress</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
+
+            <!-- Illustration -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <button
+                type="button"
+                class="crb-skill"
+                data-bs-toggle="modal"
+                data-bs-target="#crbSkillModal"
+                data-title="Illustration"
+                data-desc="Illustration och visuella uttryck – digitalt och för tryck, med känsla för form och berättande."
+                data-tags="Illustration,Visuell kommunikation,Bildidé"
+                data-projects="Illustratör (förlag) • (Lägg till illustrationer i portfolio senare)"
+              >
+                <div class="crb-skillIcon"><i class="fas fa-paint-brush"></i></div>
+                <div>
+                  <h3 class="crb-skillTitle">Illustration</h3>
+                  <p class="crb-skillSub">Visuellt • Story</p>
+                </div>
+                <span class="crb-skillMore">Läs mer →</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="kompetens-card h-100">
-          <div class="card-body">
-            <h5 class="kompetens-title">Frontend</h5>
-            <ul class="kompetens-list">
-              <li><i class="fas fa-check"></i> React.js</li>
-              <li><i class="fas fa-check"></i> React Native</li>
-              <li><i class="fas fa-check"></i> JavaScript</li>
-              <li><i class="fas fa-check"></i> TypeScript</li>
-              <li><i class="fas fa-check"></i> Next.js</li>
-              <li><i class="fas fa-check"></i> Tailwind</li>
-            </ul>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="crb-section">
+        <div class="container">
+          <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
+            <div>
+              <h2 class="crb-h2 mb-1">Portfolio</h2>
+              <p class="crb-muted mb-0">Klicka på ett projekt för att läsa mer.</p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <button
+                class="crb-project"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#crbProjectModal"
+                data-title="Recept hemsida"
+                data-desc="Fokus på UX/UI, användarvänlighet och digital tillgänglighet. Byggd med React/TypeScript och modern UI-struktur."
+                data-tech="React • TypeScript • Tailwind • Next"
+                data-link=""
+                data-img="./img/appK.png"
+              >
+                <img src="./img/appK.png" alt="Recept hemsida" class="crb-projectImg" />
+                <div class="crb-projectBody">
+                  <h3 class="crb-projectTitle">Recept hemsida</h3>
+                  <p class="crb-projectMeta">UX/UI • Tillgänglighet</p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <button
+                class="crb-project"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#crbProjectModal"
+                data-title="Webbshop"
+                data-desc="Webbshop med responsiv layout och tydlig UI. Fokus på struktur, komponenter och interaktion."
+                data-tech="HTML/CSS • JavaScript • TypeScript • SCSS • Bootstrap"
+                data-link="https://rad-duckanoo-21baea.netlify.app/"
+                data-img="./img/webbshop.png"
+              >
+                <img src="./img/webbshop.png" alt="Webbshop" class="crb-projectImg" />
+                <div class="crb-projectBody">
+                  <h3 class="crb-projectTitle">Webbshop</h3>
+                  <p class="crb-projectMeta">Frontend • UI</p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <button
+                class="crb-project"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#crbProjectModal"
+                data-title="Bokningsapp"
+                data-desc="App med fokus på bokningsflöden, favoriter och sökning. Byggd i React Native med molnkoppling."
+                data-tech="React Native • TypeScript • Firebase • Algolia"
+                data-link=""
+                data-img="./img/FX.png"
+              >
+                <img src="./img/FX.png" alt="Bokningsapp" class="crb-projectImg" />
+                <div class="crb-projectBody">
+                  <h3 class="crb-projectTitle">Bokningsapp</h3>
+                  <p class="crb-projectMeta">UX • Mobile</p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <button
+                class="crb-project"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#crbProjectModal"
+                data-title="Hitta en restaurang"
+                data-desc="App som guidar användare via karta till matställen. Inloggning + adminsida med Firebase."
+                data-tech="React • Firebase • Firestore"
+                data-link="https://stellar-pony-46a4a0.netlify.app/"
+                data-img="./img/hangryTime.png"
+              >
+                <img src="./img/hangryTime.png" alt="Hitta en restaurang" class="crb-projectImg" />
+                <div class="crb-projectBody">
+                  <h3 class="crb-projectTitle">Hitta en restaurang</h3>
+                  <p class="crb-projectMeta">React • Firebase</p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <button
+                class="crb-project"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#crbProjectModal"
+                data-title="Massagestudio"
+                data-desc="UX/UI-design med fokus på tonalitet, struktur och en lugn upplevelse."
+                data-tech="Figma • UX/UI"
+                data-link=""
+                data-img="./img/spamassage.png"
+              >
+                <img src="./img/spamassage.png" alt="Massagestudio" class="crb-projectImg" />
+                <div class="crb-projectBody">
+                  <h3 class="crb-projectTitle">Massagestudio</h3>
+                  <p class="crb-projectMeta">UX/UI</p>
+                </div>
+              </button>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <button
+                class="crb-project"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#crbProjectModal"
+                data-title="Filmbank"
+                data-desc="Filmbank med API-integration, routing, state management och felhantering. Skriven i TypeScript."
+                data-tech="React • React Router • React Query • TypeScript"
+                data-link="https://680cf9edd7c7104cfba55bc4--stupendous-banoffee-4dc63e.netlify.app/"
+                data-img="./img/movie.png"
+              >
+                <img src="./img/movie.png" alt="Filmbank" class="crb-projectImg" />
+                <div class="crb-projectBody">
+                  <h3 class="crb-projectTitle">Filmbank</h3>
+                  <p class="crb-projectMeta">React • API</p>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="kompetens-card h-100">
-          <div class="card-body">
-            <h5 class="kompetens-title">CMS</h5>
-            <ul class="kompetens-list">
-              <li><i class="fas fa-check"></i> WordPress</li>
-              <li><i class="fas fa-check"></i> StoryBlocks</li>
-            </ul>
+      </section>
+
+      <!-- CONTACT -->
+      <footer id="contact" class="crb-footer">
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-5">
+              <h2 class="crb-h2 mb-2">Kontakt</h2>
+              <p class="crb-muted mb-0">
+                Vill du prata projekt, UX, content eller frontend? Hör av dig!
+              </p>
+            </div>
+
+            <div class="col-12 col-md-7">
+              <div class="crb-contactCard">
+                <div class="crb-contactRow">
+                  <i class="fas fa-envelope"></i>
+                  <a class="crb-link" href="mailto:carolineroosbergman@gmail.com">
+                    carolineroosbergman@gmail.com
+                  </a>
+                </div>
+
+                <div class="crb-contactRow">
+                  <i class="fab fa-linkedin"></i>
+                  <a class="crb-link" href="https://www.linkedin.com/in/carb78654" target="_blank" rel="noreferrer">
+                    LinkedIn
+                  </a>
+                </div>
+
+                <div class="crb-copyright">
+                  © <span id="crbYear"></span> Caroline Roos Bergman
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="kompetens-card h-100">
-          <div class="card-body">
-            <h5 class="kompetens-title">Övrigt</h5>
-            <ul class="kompetens-list">
-              <li><i class="fas fa-check"></i> Pedagogik</li>
-              <li><i class="fas fa-check"></i> Agilt arbete</li>
-              <li><i class="fas fa-check"></i> Projektledning</li>
-              <li><i class="fas fa-check"></i> Redaktionellt arbete</li>
-            </ul>
+      </footer>
+    </main>
+
+    <!-- SKILL MODAL -->
+    <div class="modal fade" id="crbSkillModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content crb-modal">
+          <div class="modal-header border-0 pb-0">
+            <h4 class="modal-title" id="crbSkillModalTitle">Titel</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Stäng"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <p id="crbSkillModalDesc" class="mb-3 crb-muted"></p>
+
+            <div class="mb-3">
+              <div class="crb-modalLabel">Nyckelområden</div>
+              <div id="crbSkillModalTags" class="crb-taglist"></div>
+            </div>
+
+            <div>
+              <div class="crb-modalLabel">Exempel / relaterade projekt</div>
+              <p id="crbSkillModalProjects" class="mb-0"></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-    <section id="portfolio" class="py-5 fade-in-delayed">
-      <div class="container">
-        <h2 class="mb-5">Portfolio🌟</h2>
-
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            
-            <div class="card h-100">
-              <img
-                src="./img/appK.png"
-                class="card-img-top"
-                alt="Projektbild"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Recept hemsida</h5>
-                <p class="card-text">
-                  Figma, UX/UI, användarvänlighet, digital tillgänglighet. Teknik: React, TypeScript, Tailwind, Next.
-                </p>
-              </div>
-            </div>
-            
+    <!-- PROJECT MODAL -->
+    <div class="modal fade" id="crbProjectModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content crb-modal">
+          <div class="modal-header border-0 pb-0">
+            <h4 class="modal-title" id="crbProjectTitle">Projekt</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Stäng"></button>
           </div>
 
-          
+          <div class="modal-body pt-2">
+            <img id="crbProjectImg" class="crb-modalImg" alt="" />
 
-          <div class="col">
-            <a
-              href="https://rad-duckanoo-21baea.netlify.app/"
-              target="_blank"
-              class="text-decoration-none"
-            >
-              <div class="card h-100">
-                <img
-                  src="./img/webbshop.png"
-                  class="card-img-top"
-                  alt="Projektbild"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Webbshop</h5>
-                  <p class="card-text">
-                    Teknik: HTML/CSS, JavaScript, TypeScript, SCSS, Bootstrap. 
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
+            <p id="crbProjectDesc" class="mt-3 mb-2"></p>
 
-          <div class="col">
-
-            <div class="card h-100">
-              <img
-                src="./img/FX.png"
-                class="card-img-top"
-                alt="Projektbild"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Bokningsapp</h5>
-                <p class="card-text">
-                  Design: Figma, UX/UI, användarvänlighet, digital tillgänglighet. 
-                  Teknik: React Native, TypeScript.
-                  Cloud: GCP, Firebase, sökning: Algolia.
-                </p>
-              </div>
+            <div class="mb-3">
+              <div class="crb-modalLabel">Teknik</div>
+              <p id="crbProjectTech" class="mb-0 crb-muted"></p>
             </div>
-          </a>
-        </div>
 
-        <div class="col">
-          <a
-            href="https://stellar-pony-46a4a0.netlify.app/"
-            target="_blank"
-            class="text-decoration-none"
-          >
-            <div class="card h-100">
-              <img
-                src="./img/hangryTime.png"
-                class="card-img-top"
-                alt="Projektbild"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Hitta en restaurang</h5>
-                <p class="card-text">
-                  Teknik: React, Firebase Firestore och React har vi skapat en App som
-                  guidar folk genom en karta till matställen. Det finns även
-                  inloggning och Adminsida.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-  
-
-          <div class="col">
-           
-            <div class="card h-100">
-              <img
-                src="./img/spamassage.png"
-                class="card-img-top"
-                alt="Projektbild"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Massagestudio</h5>
-                <p class="card-text">
-                  Figma, UX/UI. 
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col">
-          <a
-            href="https://680cf9edd7c7104cfba55bc4--stupendous-banoffee-4dc63e.netlify.app/"
-            target="_blank"
-            class="text-decoration-none"
-          >
-            <div class="card h-100">
-              <img
-                src="./img/movie.png"
-                class="card-img-top"
-                alt="Projektbild"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Filmbank</h5>
-                <p class="card-text">
-                  Teknik: React, React Router, React
-                  Context och React Query. Kommunikationen sker med API. Har
-                  loading & felhantering och skriven i TypeScript.
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-          <!-- 
-
-  -->
-        </div>
-      </div>
-    </section>
-
-    <!-- 
-
-    <section id="portfolio-illustrator" class="py-5">
-      <div class="container">
-        <h2 class="mb-5">Portfolio - Illustratör</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="illustration.png"
-                class="card-img-top"
-                alt="Illustration 1"
-              />
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="draw.png"
-                class="card-img-top"
-                alt="Illustration 2"
-              />
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="paint.png"
-                class="card-img-top"
-                alt="Illustration 3"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cv" class="py-5">
-      <div class="container">
-        <h2 class="mb-4 text-center">Mitt CV</h2>
-        <div class="row justify-content-center">
-          <div class="col-md-10">
-            <div class="card p-4 shadow-lg cv-card">
-              <div class="row">
-                <div class="col-md-6">
-                  <h3 class="cv-section-title">Erfarenhet</h3>
-                  <div class="cv-item mb-4">
-                    <h4>Frontend utvecklare</h4>
-                    <h5>2024 - nuvarande</h5>
-                    <p><em>OmegaPoint, Malmö</em></p>
-                    <p>
-                      Jag har praktikplats på cypersäkerhetsbolaget OmegaPoint. Här får jag
-                      utvecklas i frontend och i next.js, lära mig mer ännu om UX/UI samt arbeta agilt tillsammans med backend.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Frontend utvecklare</h4>
-                    <h5>2024 - 2024</h5>
-                    <p><em>Convertor, Malmö</em></p>
-                    <p>
-                      Jag hade praktikplats på webbyrån Convertor. Här fick jag
-                      utvecklas i frontend, lära mig mer om UX/UI samt prova på
-                      projektledning.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Illustratör</h4>
-                    <h5>2022 - nuvarande extra</h5>
-                    <p><em>Distans</em></p>
-                    <p>Korrekturläser och illustrerar till förlag.</p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Lärare</h4>
-                    <h5>2019 -2022</h5>
-                    <p><em>Malmö stad</em></p>
-                    <p>
-                      Arbetade som lågstadielärare på en central skola i Malmö.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Illustratör & förläggare</h4>
-                    <h5>2018 -2019</h5>
-                    <p><em>Malmö</em></p>
-                    <p>
-                      Jag hade arbetsuppgifter som t.ex; förläggare, bokprojekt
-                      från idé till slutprodukt, författarekontakt, rekrytering,
-                      illustration.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Förstelärare</h4>
-                    <h5>2017 -2018</h5>
-                    <p><em>Lunds Montessorigrundskola</em></p>
-                    <p>
-                      Utbildade och coachade mina kollegor med föreläsningar och
-                      workshop.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Digital producent & Copywriter</h4>
-                    <h5>2017 - 2017</h5>
-                    <p><em>Gleerups utbildning</em></p>
-                    <p>
-                      Jag hade arbetsuppgifter som; copywriter, digitalisera
-                      läromedel.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Lärare</h4>
-                    <h5>2011 - 2017</h5>
-                    <p><em>Malmö stad och Lunds kommun</em></p>
-                    <p>
-                      Jag arbetade som förskollärare, låg- och
-                      mellanstadielärare, ämneslärare och som lärare i
-                      förskoleklass.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <h3 class="cv-section-title">Utbildning</h3>
-                  <div class="cv-item mb-4">
-                    <h4>Front End Developer</h4>
-                    <h5>2023 - 2025</h5>
-                    <p><em>Medieinstitutet</em></p>
-                    <p>
-                      Utbildningen ger kompetensen att använda den webbteknik
-                      som krävs för att producera avancerade webbplatser.
-                    </p>
-                  </div>
-                  <div class="cv-item mb-4">
-                    <h4>Lärarexamen</h4>
-                    <h5>2007 - 2011</h5>
-                    <p><em>Malmö universitet</em></p>
-                    <p>
-                      Malmö högskola Lärarlegitimation F-6, i matematik, NO,
-                      svenska, svenska som andraspråk och bild.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
-    <footer id="contact" class="text-center text-lg-start text-muted py-5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-4">
-            <div class="d-flex align-items-center justify-content-center">
-              <p class="mb-0 me-2">Mejla mig!</p>
-              <a class="mail" href="mailto:carolineroosbergman@gmail.com">
-                carolineroosbergman@gmail.com
+            <div id="crbProjectLinkWrap" class="d-none">
+              <a id="crbProjectLink" class="crb-btn crb-btn-primary" target="_blank" rel="noreferrer">
+                Öppna projekt <i class="fas fa-external-link-alt ms-2"></i>
               </a>
             </div>
           </div>
-          
-          <div class="col-md-4">
-            <div class="d-flex align-items-center justify-content-center">
-         
-                <a
-                  href="https://www.linkedin.com/in/carb78654"
-                  class="linkedin-icon text-reset"
-                  target="_blank"
-                >
-                  <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-            </div>
-          </div>
-    
-          <div class="col-md-4">
-            <p class="mb-0">
-              Copyright © Caroline Roos Bergman - All Rights Reserved.
-            </p>
-          </div>
         </div>
       </div>
-    </footer>
-    
+    </div>
 
+    <!-- Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+
+    <!-- Small JS (inline, så du slipper extra fil) -->
+    <script>
+      // Footer year
+      document.getElementById("crbYear").textContent = new Date().getFullYear();
+
+      // Skill modal content
+      const crbSkillModal = document.getElementById("crbSkillModal");
+      if (crbSkillModal) {
+        crbSkillModal.addEventListener("show.bs.modal", (event) => {
+          const btn = event.relatedTarget;
+          if (!btn) return;
+
+          const title = btn.getAttribute("data-title") || "";
+          const desc = btn.getAttribute("data-desc") || "";
+          const tags = (btn.getAttribute("data-tags") || "")
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean);
+          const projects = btn.getAttribute("data-projects") || "";
+
+          document.getElementById("crbSkillModalTitle").textContent = title;
+          document.getElementById("crbSkillModalDesc").textContent = desc;
+          document.getElementById("crbSkillModalProjects").textContent = projects;
+
+          const tagWrap = document.getElementById("crbSkillModalTags");
+          tagWrap.innerHTML = "";
+          tags.forEach((t) => {
+            const span = document.createElement("span");
+            span.className = "crb-tag";
+            span.textContent = t;
+            tagWrap.appendChild(span);
+          });
+        });
+      }
+
+      // Project modal content
+      const crbProjectModal = document.getElementById("crbProjectModal");
+      if (crbProjectModal) {
+        crbProjectModal.addEventListener("show.bs.modal", (event) => {
+          const btn = event.relatedTarget;
+          if (!btn) return;
+
+          const title = btn.getAttribute("data-title") || "";
+          const desc = btn.getAttribute("data-desc") || "";
+          const tech = btn.getAttribute("data-tech") || "";
+          const link = btn.getAttribute("data-link") || "";
+          const img = btn.getAttribute("data-img") || "";
+
+          document.getElementById("crbProjectTitle").textContent = title;
+          document.getElementById("crbProjectDesc").textContent = desc;
+          document.getElementById("crbProjectTech").textContent = tech;
+
+          const imgEl = document.getElementById("crbProjectImg");
+          imgEl.src = img;
+          imgEl.alt = title;
+
+          const linkWrap = document.getElementById("crbProjectLinkWrap");
+          const linkEl = document.getElementById("crbProjectLink");
+
+          if (link && link.trim().length > 0) {
+            linkWrap.classList.remove("d-none");
+            linkEl.href = link;
+          } else {
+            linkWrap.classList.add("d-none");
+            linkEl.removeAttribute("href");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
