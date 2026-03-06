@@ -87,9 +87,7 @@
                 <a class="crb-btn crb-btn-primary" href="#portfolio">
                   Se projekt <i class="fas fa-arrow-right ms-2"></i>
                 </a>
-                <a class="crb-btn crb-btn-ghost" href="#contact">
-                  Kontakta mig
-                </a>
+                <a class="crb-btn crb-btn-ghost" href="#contact">Kontakta mig</a>
               </div>
             </div>
 
@@ -122,12 +120,13 @@
             <div class="col-12 col-lg-7">
               <div class="crb-card crb-card--soft">
                 <p class="mb-3">
-                  Med en teknisk grund inom <strong>HTML, CSS, JavaScript, React och TypeScript</strong>
+                  Med en teknisk grund inom
+                  <strong>HTML, CSS, JavaScript, React och TypeScript</strong>
                   brinner jag för att skapa användarupplevelser som kombinerar design med funktion.
                 </p>
                 <p class="mb-0">
-                  Mitt fokus på <strong>UX/UI</strong> och <strong>tillgänglighet</strong> gör att jag alltid strävar efter
-                  att skapa lösningar som känns rätt för användaren.
+                  Mitt fokus på <strong>UX/UI</strong> och <strong>tillgänglighet</strong>
+                  gör att jag alltid strävar efter att skapa lösningar som känns rätt för användaren.
                 </p>
               </div>
             </div>
@@ -141,12 +140,14 @@
           <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
             <div>
               <h2 class="crb-h2 mb-1">Kompetenser</h2>
-              <p class="crb-muted mb-0">Klicka på en kompetens för mer info och exempel.</p>
+              <p class="crb-muted mb-0">
+                Klicka på en kompetens för mer info och exempel.
+              </p>
             </div>
           </div>
 
           <div class="row g-4">
-            <!-- UX -->
+            <!-- UX (NU med UX-projektlista + bilder) -->
             <div class="col-12 col-md-6 col-lg-3">
               <button
                 type="button"
@@ -156,7 +157,12 @@
                 data-title="UX / UI & Tillgänglighet"
                 data-desc="Jag jobbar med research, informationsarkitektur, wireframes, prototyper och UI-design – med extra fokus på WCAG och inkluderande design."
                 data-tags="UX,UI,WCAG 2.2,Figma,Prototyping,Designsystem"
-                data-projects="Recept hemsida (React/Next) • Massagestudio (UX/UI) • Bokningsapp (UX/UI)"
+                data-projects="Klicka på projekten nedan för mer info."
+                data-uxprojects='[
+                  {"title":"Recept hemsida","desc":"UX/UI, flöden, tillgänglighet","img":"./img/appK.png","link":""},
+                  {"title":"Bokningsapp","desc":"UX/UI + appflöden","img":"./img/FX.png","link":""},
+                  {"title":"Massagestudio","desc":"UX/UI i Figma – lugn tonalitet","img":"./img/spamassage.png","link":""}
+                ]'
               >
                 <div class="crb-skillIcon"><i class="fas fa-pencil-ruler"></i></div>
                 <div>
@@ -293,7 +299,7 @@
               </button>
             </div>
 
-            <!-- Illustration -->
+            <!-- Illustration (länk) -->
             <div class="col-12 col-md-6 col-lg-3">
               <button
                 type="button"
@@ -303,7 +309,9 @@
                 data-title="Illustration"
                 data-desc="Illustration och visuella uttryck – digitalt och för tryck, med känsla för form och berättande."
                 data-tags="Illustration,Visuell kommunikation,Bildidé"
-                data-projects="Illustratör (förlag) • (Lägg till illustrationer i portfolio senare)"
+                data-projects="Se fler illustrationer via länken nedan."
+                data-link="https://carolineroosbergman.pb.online/projekt"
+                data-linktext="Se illustrationer"
               >
                 <div class="crb-skillIcon"><i class="fas fa-paint-brush"></i></div>
                 <div>
@@ -479,7 +487,12 @@
 
                 <div class="crb-contactRow">
                   <i class="fab fa-linkedin"></i>
-                  <a class="crb-link" href="https://www.linkedin.com/in/carb78654" target="_blank" rel="noreferrer">
+                  <a
+                    class="crb-link"
+                    href="https://www.linkedin.com/in/carb78654"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     LinkedIn
                   </a>
                 </div>
@@ -513,6 +526,24 @@
             <div>
               <div class="crb-modalLabel">Exempel / relaterade projekt</div>
               <p id="crbSkillModalProjects" class="mb-0"></p>
+            </div>
+
+            <!-- UX PROJECT LIST (visas bara om data-uxprojects finns) -->
+            <div id="crbSkillModalUxWrap" class="mt-3 d-none">
+              <div class="crb-modalLabel">UX-projekt</div>
+              <div id="crbSkillModalUxList" class="crb-list"></div>
+            </div>
+
+            <!-- Skill external link (visas bara om data-link finns) -->
+            <div id="crbSkillModalLinkWrap" class="mt-3 d-none">
+              <a
+                id="crbSkillModalLink"
+                class="crb-btn crb-btn-primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Öppna länk <i class="fas fa-external-link-alt ms-2"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -555,7 +586,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Small JS (inline, så du slipper extra fil) -->
+    <!-- JS -->
     <script>
       // Footer year
       document.getElementById("crbYear").textContent = new Date().getFullYear();
@@ -579,6 +610,7 @@
           document.getElementById("crbSkillModalDesc").textContent = desc;
           document.getElementById("crbSkillModalProjects").textContent = projects;
 
+          // Tags
           const tagWrap = document.getElementById("crbSkillModalTags");
           tagWrap.innerHTML = "";
           tags.forEach((t) => {
@@ -587,6 +619,64 @@
             span.textContent = t;
             tagWrap.appendChild(span);
           });
+
+          // UX projects list (optional) + thumbnails
+          const uxWrap = document.getElementById("crbSkillModalUxWrap");
+          const uxList = document.getElementById("crbSkillModalUxList");
+          const uxRaw = btn.getAttribute("data-uxprojects") || "";
+
+          uxList.innerHTML = "";
+          uxWrap.classList.add("d-none");
+
+          if (uxRaw.trim().length > 0) {
+            try {
+              const items = JSON.parse(uxRaw);
+              if (Array.isArray(items) && items.length > 0) {
+                uxWrap.classList.remove("d-none");
+
+                items.forEach((p) => {
+                  const el = document.createElement(p.link ? "a" : "div");
+                  el.className = "crb-listItem";
+
+                  if (p.link) {
+                    el.href = p.link;
+                    el.target = "_blank";
+                    el.rel = "noreferrer";
+                  }
+
+                  el.innerHTML = `
+                    <div class="crb-uxItem">
+                      <img class="crb-uxThumb" src="${p.img || ""}" alt="${p.title || ""}">
+                      <div class="crb-uxText">
+                        <div class="crb-listTitle">${p.title || ""}</div>
+                        <div class="crb-listDesc">${p.desc || ""}</div>
+                        ${p.link ? `<div class="crb-listCta">Open →</div>` : ""}
+                      </div>
+                    </div>
+                  `;
+
+                  uxList.appendChild(el);
+                });
+              }
+            } catch (e) {
+              // ignore parse errors
+            }
+          }
+
+          // Skill external link (optional)
+          const link = btn.getAttribute("data-link") || "";
+          const linkText = btn.getAttribute("data-linktext") || "Öppna länk";
+          const linkWrap = document.getElementById("crbSkillModalLinkWrap");
+          const linkEl = document.getElementById("crbSkillModalLink");
+
+          if (link && link.trim().length > 0) {
+            linkWrap.classList.remove("d-none");
+            linkEl.href = link;
+            linkEl.innerHTML = `${linkText} <i class="fas fa-external-link-alt ms-2"></i>`;
+          } else {
+            linkWrap.classList.add("d-none");
+            linkEl.removeAttribute("href");
+          }
         });
       }
 
