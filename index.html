@@ -147,7 +147,7 @@
           </div>
 
           <div class="row g-4">
-            <!-- UX (NU med UX-projektlista + bilder) -->
+            <!-- UX (NU med thinking + doing + bilder) -->
             <div class="col-12 col-md-6 col-lg-3">
               <button
                 type="button"
@@ -159,17 +159,38 @@
                 data-tags="UX,UI,WCAG 2.2,Figma,Prototyping,Designsystem"
                 data-projects="Klicka på projekten nedan för mer info."
                 data-uxprojects='[
-                  {"title":"Recept hemsida","desc":"UX/UI, flöden, tillgänglighet","img":"./img/appK.png","link":""},
-                  {"title":"Bokningsapp","desc":"UX/UI + appflöden","img":"./img/FX.png","link":""},
-                  {"title":"Massagestudio","desc":"UX/UI i Figma – lugn tonalitet","img":"./img/spamassage.png","link":""}
+                  {
+                    "title":"Recept hemsida",
+                    "desc":"UX/UI, flöden, tillgänglighet",
+                    "img":"./img/appK.png",
+                    "link":"",
+                    "thinking":"Jag utgick från användarens mål: hitta recept snabbt och kunna spara favoriter. Jag prioriterade tydliga kategorier, korta beslutsvägar och WCAG i kontrast/typografi.",
+                    "doing":"Jag tog fram struktur och flöden, gjorde skisser/prototyper och satte UI. Jag testade läsbarhet, fokusordning och uppdaterade komponenter för bättre tillgänglighet."
+                  },
+                  {
+                    "title":"Bokningsapp",
+                    "desc":"UX/UI + appflöden",
+                    "img":"./img/FX.png",
+                    "link":"",
+                    "thinking":"Jag fokuserade på ett enkelt bokningsflöde med så få steg som möjligt och tydlig feedback. Målet var att användaren alltid ska veta var den är och vad nästa steg är.",
+                    "doing":"Jag ritade upp user flows, prioriterade navigation och states (tomt läge, loading, fel). Jag designade listor/kort och finjusterade microcopy för att minska osäkerhet."
+                  },
+                  {
+                    "title":"Massagestudio",
+                    "desc":"UX/UI i Figma – lugn tonalitet",
+                    "img":"./img/spamassage.png",
+                    "link":"",
+                    "thinking":"Jag ville skapa en lugn upplevelse där bokning och kontakt känns tryggt. Jag jobbade med luft, tydlig hierarki och ett mjukt visuellt uttryck.",
+                    "doing":"Jag tog fram wireframes, UI-komponenter och en enkel struktur för behandlingar/priser. Jag anpassade färger och typografi för att förstärka känslan och tydligheten."
+                  }
                 ]'
               >
                 <div class="crb-skillIcon"><i class="fas fa-pencil-ruler"></i></div>
                 <div>
                   <h3 class="crb-skillTitle">UX / UI</h3>
                   <p class="crb-skillSub">Research • Flöden • WCAG</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -189,8 +210,8 @@
                 <div>
                   <h3 class="crb-skillTitle">Foto</h3>
                   <p class="crb-skillSub">Bildspråk • Webb</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -210,8 +231,8 @@
                 <div>
                   <h3 class="crb-skillTitle">Film</h3>
                   <p class="crb-skillSub">Inspelning • Klipp</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -231,8 +252,8 @@
                 <div>
                   <h3 class="crb-skillTitle">Content</h3>
                   <p class="crb-skillSub">Strategi • Format</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -252,8 +273,8 @@
                 <div>
                   <h3 class="crb-skillTitle">Copywriting</h3>
                   <p class="crb-skillSub">UX-writing • CTA</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -273,8 +294,8 @@
                 <div>
                   <h3 class="crb-skillTitle">Programmering</h3>
                   <p class="crb-skillSub">JS • React • TS</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -294,8 +315,8 @@
                 <div>
                   <h3 class="crb-skillTitle">CMS</h3>
                   <p class="crb-skillSub">WordPress</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
 
@@ -317,8 +338,8 @@
                 <div>
                   <h3 class="crb-skillTitle">Illustration</h3>
                   <p class="crb-skillSub">Visuellt • Story</p>
+                  <span class="crb-skillMore">Läs mer →</span>
                 </div>
-                <span class="crb-skillMore">Läs mer →</span>
               </button>
             </div>
           </div>
@@ -620,7 +641,7 @@
             tagWrap.appendChild(span);
           });
 
-          // UX projects list (optional) + thumbnails
+          // UX projects list (optional) + thumbnails + thinking/doing
           const uxWrap = document.getElementById("crbSkillModalUxWrap");
           const uxList = document.getElementById("crbSkillModalUxList");
           const uxRaw = btn.getAttribute("data-uxprojects") || "";
@@ -650,6 +671,17 @@
                       <div class="crb-uxText">
                         <div class="crb-listTitle">${p.title || ""}</div>
                         <div class="crb-listDesc">${p.desc || ""}</div>
+
+                        ${p.thinking ? `
+                          <div class="crb-uxLabel">Hur jag tänkte</div>
+                          <div class="crb-uxBody">${p.thinking}</div>
+                        ` : ""}
+
+                        ${p.doing ? `
+                          <div class="crb-uxLabel">Vad jag gör</div>
+                          <div class="crb-uxBody">${p.doing}</div>
+                        ` : ""}
+
                         ${p.link ? `<div class="crb-listCta">Open →</div>` : ""}
                       </div>
                     </div>
