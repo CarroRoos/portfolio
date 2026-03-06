@@ -147,7 +147,7 @@
           </div>
 
           <div class="row g-4">
-            <!-- UX (NU med thinking + doing + bilder) -->
+            <!-- UX -->
             <div class="col-12 col-md-6 col-lg-3">
               <button
                 type="button"
@@ -278,7 +278,7 @@
               </button>
             </div>
 
-            <!-- Programmering -->
+            <!-- Programmering (NU med thinking + doing + bilder) -->
             <div class="col-12 col-md-6 col-lg-3">
               <button
                 type="button"
@@ -288,7 +288,33 @@
                 data-title="Programmering (JS / React)"
                 data-desc="Frontendutveckling med fokus på komponenttänk, prestanda och en bra användarupplevelse."
                 data-tags="HTML,CSS,JavaScript,React,TypeScript,Next.js"
-                data-projects="Filmbank • Hitta en restaurang • Webbshop • Recept hemsida"
+                data-projects="Klicka på projekten nedan för mer info."
+                data-devprojects='[
+                  {
+                    "title":"Filmbank",
+                    "desc":"React, API, routing, state & felhantering",
+                    "img":"./img/movie.png",
+                    "link":"https://680cf9edd7c7104cfba55bc4--stupendous-banoffee-4dc63e.netlify.app/",
+                    "thinking":"Jag ville bygga en tydlig appstruktur med routing och bra användarfeedback. Fokus låg på prestanda, tydliga states och att snabbt hitta innehåll.",
+                    "doing":"Jag byggde komponentstruktur, kopplade API, la till loading/error-states och förbättrade UX med återanvändbara komponenter och TypeScript-typer."
+                  },
+                  {
+                    "title":"Hitta en restaurang",
+                    "desc":"React + Firebase/Firestore, karta, login/admin",
+                    "img":"./img/hangryTime.png",
+                    "link":"https://stellar-pony-46a4a0.netlify.app/",
+                    "thinking":"Målet var att användaren snabbt ska hitta matställen via karta och känna kontroll. Jag prioriterade enkel navigation och tydliga val.",
+                    "doing":"Jag byggde flöden för login och admin, kopplade Firestore och skapade UI-komponenter för listor/karta. Jag förbättrade felhantering och tomma lägen."
+                  },
+                  {
+                    "title":"Webbshop",
+                    "desc":"HTML/CSS/JS/TS, responsiv UI och interaktion",
+                    "img":"./img/webbshop.png",
+                    "link":"https://rad-duckanoo-21baea.netlify.app/",
+                    "thinking":"Jag ville ha en ren UI med tydliga produktkort och en enkel köpupplevelse. Fokus: struktur, responsivitet och läsbarhet.",
+                    "doing":"Jag byggde layout och interaktion med JS/TS. Jag jobbade med responsiva brytpunkter och förbättrade användarfeedback i UI."
+                  }
+                ]'
               >
                 <div class="crb-skillIcon"><i class="fas fa-code"></i></div>
                 <div>
@@ -346,7 +372,7 @@
         </div>
       </section>
 
-      <!-- PORTFOLIO -->
+      <!-- PORTFOLIO (oförändrad) -->
       <section id="portfolio" class="crb-section">
         <div class="container">
           <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
@@ -549,13 +575,19 @@
               <p id="crbSkillModalProjects" class="mb-0"></p>
             </div>
 
-            <!-- UX PROJECT LIST (visas bara om data-uxprojects finns) -->
+            <!-- UX PROJECT LIST -->
             <div id="crbSkillModalUxWrap" class="mt-3 d-none">
               <div class="crb-modalLabel">UX-projekt</div>
               <div id="crbSkillModalUxList" class="crb-list"></div>
             </div>
 
-            <!-- Skill external link (visas bara om data-link finns) -->
+            <!-- DEV PROJECT LIST -->
+            <div id="crbSkillModalDevWrap" class="mt-3 d-none">
+              <div class="crb-modalLabel">Programmeringsprojekt</div>
+              <div id="crbSkillModalDevList" class="crb-list"></div>
+            </div>
+
+            <!-- Skill external link -->
             <div id="crbSkillModalLinkWrap" class="mt-3 d-none">
               <a
                 id="crbSkillModalLink"
@@ -641,59 +673,65 @@
             tagWrap.appendChild(span);
           });
 
-          // UX projects list (optional) + thumbnails + thinking/doing
-          const uxWrap = document.getElementById("crbSkillModalUxWrap");
-          const uxList = document.getElementById("crbSkillModalUxList");
-          const uxRaw = btn.getAttribute("data-uxprojects") || "";
+          // Helper to render a list (UX/Dev) with same layout
+          const renderList = (wrapId, listId, rawAttr) => {
+            const wrap = document.getElementById(wrapId);
+            const list = document.getElementById(listId);
+            const raw = btn.getAttribute(rawAttr) || "";
 
-          uxList.innerHTML = "";
-          uxWrap.classList.add("d-none");
+            list.innerHTML = "";
+            wrap.classList.add("d-none");
 
-          if (uxRaw.trim().length > 0) {
+            if (!raw.trim()) return;
+
             try {
-              const items = JSON.parse(uxRaw);
-              if (Array.isArray(items) && items.length > 0) {
-                uxWrap.classList.remove("d-none");
+              const items = JSON.parse(raw);
+              if (!Array.isArray(items) || items.length === 0) return;
 
-                items.forEach((p) => {
-                  const el = document.createElement(p.link ? "a" : "div");
-                  el.className = "crb-listItem";
+              wrap.classList.remove("d-none");
 
-                  if (p.link) {
-                    el.href = p.link;
-                    el.target = "_blank";
-                    el.rel = "noreferrer";
-                  }
+              items.forEach((p) => {
+                const el = document.createElement(p.link ? "a" : "div");
+                el.className = "crb-listItem";
 
-                  el.innerHTML = `
-                    <div class="crb-uxItem">
-                      <img class="crb-uxThumb" src="${p.img || ""}" alt="${p.title || ""}">
-                      <div class="crb-uxText">
-                        <div class="crb-listTitle">${p.title || ""}</div>
-                        <div class="crb-listDesc">${p.desc || ""}</div>
+                if (p.link) {
+                  el.href = p.link;
+                  el.target = "_blank";
+                  el.rel = "noreferrer";
+                }
 
-                        ${p.thinking ? `
-                          <div class="crb-uxLabel">Hur jag tänkte</div>
-                          <div class="crb-uxBody">${p.thinking}</div>
-                        ` : ""}
+                el.innerHTML = `
+                  <div class="crb-uxItem">
+                    <img class="crb-uxThumb" src="${p.img || ""}" alt="${p.title || ""}">
+                    <div class="crb-uxText">
+                      <div class="crb-listTitle">${p.title || ""}</div>
+                      <div class="crb-listDesc">${p.desc || ""}</div>
 
-                        ${p.doing ? `
-                          <div class="crb-uxLabel">Vad jag gör</div>
-                          <div class="crb-uxBody">${p.doing}</div>
-                        ` : ""}
+                      ${p.thinking ? `
+                        <div class="crb-uxLabel">Hur jag tänkte</div>
+                        <div class="crb-uxBody">${p.thinking}</div>
+                      ` : ""}
 
-                        ${p.link ? `<div class="crb-listCta">Open →</div>` : ""}
-                      </div>
+                      ${p.doing ? `
+                        <div class="crb-uxLabel">Vad jag gör</div>
+                        <div class="crb-uxBody">${p.doing}</div>
+                      ` : ""}
+
+                      ${p.link ? `<div class="crb-listCta">Open →</div>` : ""}
                     </div>
-                  `;
+                  </div>
+                `;
 
-                  uxList.appendChild(el);
-                });
-              }
+                list.appendChild(el);
+              });
             } catch (e) {
               // ignore parse errors
             }
-          }
+          };
+
+          // Render UX list + Dev list
+          renderList("crbSkillModalUxWrap", "crbSkillModalUxList", "data-uxprojects");
+          renderList("crbSkillModalDevWrap", "crbSkillModalDevList", "data-devprojects");
 
           // Skill external link (optional)
           const link = btn.getAttribute("data-link") || "";
