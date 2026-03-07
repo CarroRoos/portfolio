@@ -64,23 +64,23 @@
         <div class="container">
           <div class="row align-items-center g-5">
             <div class="col-12 col-lg-6 order-2 order-lg-1">
-              <p class="crb-kicker">Frontend • UX/UI • Content</p>
+              <p class="crb-kicker">UX/UI • Content • Frontend</p>
               <h1 class="crb-h1">
                 Hej <span class="crb-wave">👋</span><br />
                 Jag är <span class="crb-name">Caroline</span>
               </h1>
 
               <p class="crb-lead">
-                Frontendutvecklare med extra fokus på UX och digital tillgänglighet.
-                Jag bygger lösningar som känns enkla att använda – och ser bra ut.
+                UX - designer och content skapare med extra fokus på UX och digital tillgänglighet.
+                Jag bygger lösningar som känns enkla att använda och ser bra ut!
               </p>
 
               <div class="crb-badges">
                 <span class="crb-badge">UX/UI</span>
                 <span class="crb-badge">WCAG</span>
-                <span class="crb-badge">React/TS</span>
-                <span class="crb-badge">WordPress</span>
                 <span class="crb-badge">Copy/Content</span>
+                <span class="crb-badge">Programmering</span>
+                <span class="crb-badge">Illustration</span>
               </div>
 
               <div class="crb-cta">
@@ -105,35 +105,35 @@
         </div>
       </section>
 
-      <!-- OM MIG -->
-      <section id="om" class="crb-section">
-        <div class="container">
-          <div class="row g-4 align-items-start">
-            <div class="col-12 col-lg-5">
-              <h2 class="crb-h2">Om mig</h2>
-              <p class="crb-muted">
-                Jag kombinerar teknisk kompetens med design och kommunikation.
-                Tidigare har jag arbetat som lärare, digital redaktör/producent och illustratör.
-              </p>
-            </div>
+ <!-- OM MIG -->
+<section id="om" class="crb-section">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-12 col-lg-5">
+        <h2 class="crb-h2">Om mig</h2>
+        <p class="crb-muted">
+          Jag kombinerar <strong>UX</strong> och <strong>digital kommunikation</strong> med ett visuellt öga för
+          <strong>content</strong> – från <strong>sociala medier</strong> och redaktionellt till <strong>foto</strong>,
+          <strong>film</strong> och <strong>illustration</strong>.
+        </p>
+      </div>
 
-            <div class="col-12 col-lg-7">
-              <div class="crb-card crb-card--soft">
-                <p class="mb-3">
-                  Med en teknisk grund inom
-                  <strong>HTML, CSS, JavaScript, React och TypeScript</strong>
-                  brinner jag för att skapa användarupplevelser som kombinerar design med funktion.
-                </p>
-                <p class="mb-0">
-                  Mitt fokus på <strong>UX/UI</strong> och
-                  <strong>tillgänglighet</strong>
-                  gör att jag alltid strävar efter att skapa lösningar som känns rätt för användaren.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="col-12 col-lg-7">
+        <div class="crb-card crb-card--soft">
+          <p class="mb-3">
+            Jag skapar <strong>struktur</strong> och innehåll som fungerar i olika kanaler – med fokus på
+            <strong>målgrupp</strong>, <strong>tonalitet</strong> och <strong>tydliga budskap</strong>.
+            Exempel: <strong>kampanjupplägg</strong>, <strong>contentplaner</strong>, <strong>copy</strong> och visuella koncept.
+          </p>
+          <p class="mb-0">
+            Jag har även en <strong>teknisk grund</strong> (frontend), men mitt fokus ligger på
+            <strong>UX/UI</strong>, <strong>tillgänglighet</strong> och <strong>helhetsupplevelsen</strong>.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- KOMPETENSER -->
       <section id="kompetenser" class="crb-section crb-section--alt">
@@ -329,7 +329,7 @@
           <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
             <div>
               <h2 class="crb-h2 mb-1">Portfolio</h2>
-              <p class="crb-muted mb-0">Klicka på ett projekt för att läsa mer.</p>
+             
             </div>
           </div>
 
@@ -792,9 +792,12 @@
           document.getElementById("crbProjectDesc").textContent = desc;
           document.getElementById("crbProjectTech").textContent = tech;
 
-          const imgEl = document.getElementById("crbProjectImg");
-          imgEl.src = img;
-          imgEl.alt = title;
+         const imgEl = document.getElementById("crbProjectImg");
+imgEl.src = img;
+imgEl.alt = title;
+
+// make modal image "smaller/clean" like the cards
+imgEl.classList.add("crb-modalImg--small");
 
           const linkWrap = document.getElementById("crbProjectLinkWrap");
           const linkEl = document.getElementById("crbProjectLink");

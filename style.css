@@ -596,3 +596,17 @@
     height: 360px;
   }
 }
+
+/* Make image in Project modal smaller/clean (like the cards) */
+.crb-modalImg--small {
+  object-fit: contain;   /* no hard crop */
+  background: #fff;
+  padding: 16px;         /* shrink visually */
+}
+
+/* optional: a bit less padding on mobile */
+@media (max-width: 576px) {
+  .crb-modalImg--small {
+    padding: 10px;
+  }
+}
