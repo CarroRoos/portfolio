@@ -8,7 +8,7 @@
 .crb-body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: #1f1f1f;
-  background: #faf7f5;
+  background: #ffffff;
 }
 
 /* Headings */
@@ -594,6 +594,14 @@
   }
 }
 
+
+
+/* Gör bara Kul med bok-bilden lite mindre inne i kortet */
+.crb-projectImg--small {
+  object-fit: contain;   /* ingen hård crop */
+  padding: 12px;         /* krymper visuellt */
+  background: #fff;      /* clean */
+}
 /* ===== Responsive ===== */
 @media (max-width: 991px) {
   .crb-photo {
