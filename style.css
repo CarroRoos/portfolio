@@ -220,7 +220,6 @@
 }
 
 /* ===== Skills ===== */
-/* NOTE: "Läs mer" ligger nu på egen rad (ingen absolute) */
 .crb-skill {
   width: 100%;
   text-align: left;
@@ -235,7 +234,7 @@
 
   display: grid;
   grid-template-columns: 44px 1fr;
-  grid-template-rows: auto auto auto; /* title, sub, button */
+  grid-template-rows: auto auto auto;
   gap: 12px;
   align-items: start;
 }
@@ -274,7 +273,6 @@
   font-size: 14px;
 }
 
-/* "Läs mer" button/pill - now in flow */
 .crb-skillMore {
   position: static;
   grid-column: 2;
@@ -385,7 +383,7 @@
   object-fit: cover;
 }
 
-/* ===== Skill modal: UX project list ===== */
+/* ===== Skill modal lists ===== */
 .crb-list {
   display: grid;
   gap: 10px;
@@ -428,7 +426,7 @@
   font-size: 14px;
 }
 
-/* ===== UX list with thumbnails (in skill modal) ===== */
+/* default: thumbnail layout (used elsewhere if needed) */
 .crb-uxItem {
   display: grid;
   grid-template-columns: 92px 1fr;
@@ -508,6 +506,7 @@
   line-height: 1.45;
 }
 
+/* ===== Gallery ===== */
 .crb-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -545,63 +544,43 @@
   }
 }
 
-#crbSkillModalContentList .crb-uxItem { grid-template-columns: 1fr; }
-#crbSkillModalContentList .crb-uxThumb { width: 100%; height: 260px; object-fit: contain; background: #fff; border-radius: 14px; }
-@media (max-width: 576px) { #crbSkillModalContentList .crb-uxThumb { height: 200px; } }
-
-/* ===== UX: stora fyrkantiga bilder i UX-modalen ===== */
-#crbSkillModalUxList .crb-uxItem {
-  grid-template-columns: 1fr; /* bild överst */
-  align-items: start;
-}
-
-#crbSkillModalUxList .crb-uxThumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;   /* fyrkant */
-  height: auto;          /* aspect-ratio styr */
-  object-fit: contain;   /* hela bilden syns */
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-
-/* mobil: lite mindre */
-@media (max-width: 576px) {
-  #crbSkillModalUxList .crb-uxThumb {
-    border-radius: 12px;
-  }
-}
-
-/* ===== DEV/Programmering: stora fyrkantiga bilder i modalen ===== */
+/* =======================================================
+   MODAL: Content, UX, Dev -> samma stora kort (matchar)
+   ======================================================= */
+#crbSkillModalContentList .crb-uxItem,
+#crbSkillModalUxList .crb-uxItem,
 #crbSkillModalDevList .crb-uxItem {
   grid-template-columns: 1fr; /* bild överst */
   align-items: start;
 }
 
+#crbSkillModalContentList .crb-uxThumb,
+#crbSkillModalUxList .crb-uxThumb,
 #crbSkillModalDevList .crb-uxThumb {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* fyrkant */
-  height: auto;
-  object-fit: contain;   /* hela bilden syns */
+  height: 260px;        /* samma som Content */
+  object-fit: contain;  /* hela bilden syns */
   background: #fff;
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.06);
 }
 
 @media (max-width: 576px) {
+  #crbSkillModalContentList .crb-uxThumb,
+  #crbSkillModalUxList .crb-uxThumb,
   #crbSkillModalDevList .crb-uxThumb {
+    height: 200px;      /* samma som Content */
     border-radius: 12px;
   }
 }
 
-
-
 /* Gör bara Kul med bok-bilden lite mindre inne i kortet */
 .crb-projectImg--small {
-  object-fit: contain;   /* ingen hård crop */
-  padding: 12px;         /* krymper visuellt */
-  background: #fff;      /* clean */
+  object-fit: contain;
+  padding: 12px;
+  background: #fff;
 }
+
 /* ===== Responsive ===== */
 @media (max-width: 991px) {
   .crb-photo {
