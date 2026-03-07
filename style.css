@@ -545,6 +545,55 @@
   }
 }
 
+#crbSkillModalContentList .crb-uxItem { grid-template-columns: 1fr; }
+#crbSkillModalContentList .crb-uxThumb { width: 100%; height: 260px; object-fit: contain; background: #fff; border-radius: 14px; }
+@media (max-width: 576px) { #crbSkillModalContentList .crb-uxThumb { height: 200px; } }
+
+/* ===== UX: stora fyrkantiga bilder i UX-modalen ===== */
+#crbSkillModalUxList .crb-uxItem {
+  grid-template-columns: 1fr; /* bild överst */
+  align-items: start;
+}
+
+#crbSkillModalUxList .crb-uxThumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* fyrkant */
+  height: auto;          /* aspect-ratio styr */
+  object-fit: contain;   /* hela bilden syns */
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* mobil: lite mindre */
+@media (max-width: 576px) {
+  #crbSkillModalUxList .crb-uxThumb {
+    border-radius: 12px;
+  }
+}
+
+/* ===== DEV/Programmering: stora fyrkantiga bilder i modalen ===== */
+#crbSkillModalDevList .crb-uxItem {
+  grid-template-columns: 1fr; /* bild överst */
+  align-items: start;
+}
+
+#crbSkillModalDevList .crb-uxThumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* fyrkant */
+  height: auto;
+  object-fit: contain;   /* hela bilden syns */
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+@media (max-width: 576px) {
+  #crbSkillModalDevList .crb-uxThumb {
+    border-radius: 12px;
+  }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 991px) {
   .crb-photo {
