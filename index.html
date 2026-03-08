@@ -69,7 +69,7 @@
 
               <p class="crb-lead">
                 UX-designer och content creator med extra fokus på digital tillgänglighet.
-                Jag skapar lösningar som känns enkla att använda – och ser bra ut.
+                Jag skapar lösningar som känns enkla att använda och ser bra ut!
               </p>
 
               <div class="crb-badges">
@@ -98,37 +98,37 @@
         </div>
       </section>
 
-      <!-- OM MIG -->
-      <section id="om" class="crb-section">
-        <div class="container">
-          <div class="row g-4 align-items-start">
-            <div class="col-12 col-lg-5">
-              <h2 class="crb-h2">Om mig</h2>
-              <p class="crb-muted">
-                Jag kombinerar <strong>UX</strong> och <strong>digital kommunikation</strong> med ett visuellt öga för
-                <strong>content</strong> – från <strong>sociala medier</strong> och redaktionellt till <strong>foto</strong>,
-                <strong>film</strong> och <strong>illustration</strong>.
-              </p>
-            </div>
+     <!-- OM MIG -->
+<section id="om" class="crb-section">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-12 col-lg-5">
+        <h2 class="crb-h2">Om mig</h2>
+        <p class="crb-muted">
+          Jag kombinerar <strong>UX</strong> och <strong>digital kommunikation</strong> med ett visuellt öga för
+          <strong>content</strong> från <strong>sociala medier</strong> och redaktionellt till <strong>foto</strong>,
+          <strong>film</strong> och <strong>illustration</strong>.
+        </p>
+      </div>
 
-            <div class="col-12 col-lg-7">
-              <div class="crb-card crb-card--soft">
-                <p class="mb-3">
-                  Jag skapar <strong>struktur</strong> och innehåll som fungerar i olika kanaler – med fokus på
-                  <strong>målgrupp</strong>, <strong>tonalitet</strong> och <strong>tydliga budskap</strong>.
-                  Exempel: <strong>kampanjupplägg</strong>, <strong>contentplaner</strong>, <strong>copy</strong> och visuella koncept.
-                </p>
-                <p class="mb-0">
-                  Jag har även en <strong>teknisk grund</strong> (frontend), men mitt fokus ligger på
-                  <strong>UX/UI</strong>, <strong>tillgänglighet</strong> och <strong>helhetsupplevelsen</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="col-12 col-lg-7">
+        <div class="crb-card crb-card--soft">
+          <p class="mb-3">
+            Jag skapar struktur och innehåll som fungerar i olika kanaler med fokus på
+            målgrupp, tonalitet och tydliga budskap.
+            Exempel: kampanjupplägg, contentplaner, copy och visuella koncept.
+          </p>
+          <p class="mb-0">
+            Jag har även en teknisk grund (frontend), men mitt fokus ligger på
+            UX/UI, tillgänglighet och helhetsupplevelsen.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- PORTFOLIO (NU FÖRST) -->
+      <!-- PORTFOLIO (2 per rad + större kort) -->
       <section id="portfolio" class="crb-section">
         <div class="container">
           <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
@@ -140,7 +140,7 @@
 
           <div class="row g-4">
             <!-- Project 1 -->
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <button
                 class="crb-project"
                 type="button"
@@ -164,7 +164,7 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <button
                 class="crb-project"
                 type="button"
@@ -192,7 +192,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <button
                 class="crb-project"
                 type="button"
@@ -216,7 +216,7 @@
             </div>
 
             <!-- Project 4 -->
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <button
                 class="crb-project"
                 type="button"
@@ -244,7 +244,7 @@
             </div>
 
             <!-- Project 5 -->
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <button
                 class="crb-project"
                 type="button"
@@ -268,7 +268,7 @@
             </div>
 
             <!-- Project 6 -->
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-6">
               <button
                 class="crb-project"
                 type="button"
@@ -298,7 +298,7 @@
         </div>
       </section>
 
-      <!-- KOMPETENSER (NU KORT + CLEAN) -->
+      <!-- KOMPETENSER -->
       <section id="kompetenser" class="crb-section crb-section--alt">
         <div class="container">
           <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
@@ -314,7 +314,7 @@
             <span class="crb-badge">Copy / microcopy</span>
             <span class="crb-badge">Sociala medier</span>
             <span class="crb-badge">Figma</span>
-            <span class="crb-badge">Frontend (grund)</span>
+            <span class="crb-badge">Frontend</span>
             <span class="crb-badge">Illustration</span>
             <span class="crb-badge">Foto / film</span>
           </div>
@@ -443,9 +443,8 @@
           const imgEl = document.getElementById("crbProjectImg");
           imgEl.src = img;
           imgEl.alt = title;
-          imgEl.classList.add("crb-modalImg--small"); // du har CSS för detta
+          imgEl.classList.add("crb-modalImg--small");
 
-          // Thinking/Solving/Techniques
           const setBlock = (wrapId, textId, value) => {
             const wrap = document.getElementById(wrapId);
             const textEl = document.getElementById(textId);
@@ -462,7 +461,6 @@
           setBlock("crbProjectSolvingWrap", "crbProjectSolving", solving);
           setBlock("crbProjectTechniquesWrap", "crbProjectTechniques", techniques);
 
-          // Link
           const linkWrap = document.getElementById("crbProjectLinkWrap");
           const linkEl = document.getElementById("crbProjectLink");
 

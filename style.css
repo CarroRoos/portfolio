@@ -108,11 +108,8 @@
 }
 
 .crb-lead {
-  font-size: 1.06rem;
-  color: rgba(31, 31, 31, 0.75);
-  max-width: 24ch;
-  margin-bottom: 34px;
-  line-height: 1.5;
+  max-width: 60ch;  
+  line-height: 1.6;
 }
 
 .crb-badges {
@@ -204,7 +201,7 @@
 }
 
 .crb-section--alt {
-  background: #f8fafc;
+  background: #fff; /* istället för #f8fafc */
   border-top: 1px solid rgba(17, 24, 39, 0.06);
   border-bottom: 1px solid rgba(17, 24, 39, 0.06);
 }
@@ -318,19 +315,21 @@
   border-color: rgba(17, 24, 39, 0.16);
 }
 
+/* ✅ STÖRRE BILD I PORTFOLIO-KORTEN */
 .crb-projectImg {
   width: 100%;
-  height: 220px;
+  height: 280px;      /* var 220px */
   object-fit: cover;
   display: block;
 }
 
+/* ✅ MER LUFT I TEXTEN */
 .crb-projectBody {
-  padding: 14px 16px 16px;
+  padding: 18px 18px 20px; /* var 14px 16px 16px */
 }
 
 .crb-projectTitle {
-  font-size: 18px;
+  font-size: 19px;    /* var 18px */
   font-weight: 900;
   margin-bottom: 6px;
 }
@@ -339,6 +338,14 @@
   margin: 0;
   color: rgba(31, 31, 31, 0.65);
   font-weight: 700;
+  font-size: 14px;
+}
+
+/* Gör bilderna “lite mindre” inne i kortet (clean) */
+.crb-projectImg--small {
+  object-fit: contain;
+  padding: 12px;
+  background: #fff;
 }
 
 /* ===== Modal ===== */
@@ -359,24 +366,6 @@
   font-weight: 800;
 }
 
-.crb-taglist {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.crb-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 13px;
-  background: rgba(17, 24, 39, 0.06);
-  color: rgba(17, 24, 39, 0.75);
-  border: 1px solid rgba(17, 24, 39, 0.10);
-  font-weight: 700;
-}
-
 .crb-modalImg {
   width: 100%;
   border-radius: 14px;
@@ -386,68 +375,12 @@
   background: rgba(255, 255, 255, 0.95);
 }
 
-/* ===== Skill modal lists ===== */
-.crb-list {
-  display: grid;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.crb-listItem {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid rgba(17, 24, 39, 0.08);
-  background: #fff;
-  border-radius: 14px;
-  padding: 12px;
-  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-}
-
-.crb-listItem:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
-  border-color: rgba(17, 24, 39, 0.16);
-}
-
-.crb-listTitle {
-  font-weight: 900;
-  margin-bottom: 2px;
-}
-
-.crb-listDesc {
-  color: rgba(31, 31, 31, 0.65);
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.crb-listCta {
-  margin-top: 6px;
-  font-weight: 900;
-  color: #b89782;
-  font-size: 14px;
-}
-
-/* default: thumbnail layout (used elsewhere if needed) */
-.crb-uxItem {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 12px;
-  align-items: center;
-}
-
-.crb-uxThumb {
-  width: 92px;
-  height: 72px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-
-.crb-uxText {
-  min-width: 0;
+/* Make image in Project modal smaller/clean (like the cards) */
+.crb-modalImg--small {
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 16px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
 }
 
 /* ===== Footer ===== */
@@ -458,7 +391,7 @@
 }
 
 .crb-contactCard {
-  background: rgba(17, 24, 39, 0.04);
+  background: #fff; /* istället för grå ton */
   border: 1px solid rgba(17, 24, 39, 0.08);
   border-radius: 18px;
   padding: 18px;
@@ -490,100 +423,6 @@
   color: rgba(31, 31, 31, 0.6);
   font-weight: 700;
   font-size: 14px;
-}
-
-.crb-uxLabel {
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(31, 31, 31, 0.55);
-}
-
-.crb-uxBody {
-  margin-top: 4px;
-  color: rgba(31, 31, 31, 0.75);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-/* ===== Gallery ===== */
-.crb-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.crb-galleryItem {
-  display: block;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(17, 24, 39, 0.08);
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-}
-
-.crb-galleryItem:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
-  border-color: rgba(17, 24, 39, 0.16);
-}
-
-.crb-galleryItem img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  display: block;
-}
-
-@media (max-width: 576px) {
-  .crb-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .crb-galleryItem img {
-    height: 120px;
-  }
-}
-
-/* =======================================================
-   MODAL: Content, UX, Dev -> samma stora kort (matchar)
-   ======================================================= */
-#crbSkillModalContentList .crb-uxItem,
-#crbSkillModalUxList .crb-uxItem,
-#crbSkillModalDevList .crb-uxItem {
-  grid-template-columns: 1fr;
-  align-items: start;
-}
-
-#crbSkillModalContentList .crb-uxThumb,
-#crbSkillModalUxList .crb-uxThumb,
-#crbSkillModalDevList .crb-uxThumb {
-  width: 100%;
-  height: 260px;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-@media (max-width: 576px) {
-  #crbSkillModalContentList .crb-uxThumb,
-  #crbSkillModalUxList .crb-uxThumb,
-  #crbSkillModalDevList .crb-uxThumb {
-    height: 200px;
-    border-radius: 12px;
-  }
-}
-
-/* Gör bara Kul med bok-bilden lite mindre inne i kortet */
-.crb-projectImg--small {
-  object-fit: contain;
-  padding: 12px;
-  background: #fff;
 }
 
 /* ===== Responsive ===== */
@@ -625,31 +464,23 @@
   .crb-photo {
     height: 360px;
   }
-}
 
-/* Make image in Project modal smaller/clean (like the cards) */
-.crb-modalImg--small {
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 16px;
-  border: 1px solid rgba(17, 24, 39, 0.12);
-}
+  /* mobil: lite lägre portfolio-bilder */
+  .crb-projectImg {
+    height: 230px;
+  }
 
-/* optional: a bit less padding on mobile */
-@media (max-width: 576px) {
   .crb-modalImg--small {
     padding: 10px;
   }
 }
 
-/* ===== Hero focus states ===== */
-.crb-skill:focus-visible,
+/* ===== Focus states ===== */
 .crb-project:focus-visible {
   outline: 3px solid rgba(190, 126, 106, 0.35);
   outline-offset: 3px;
 }
 
-.crb-skill:active,
 .crb-project:active {
   transform: translateY(-1px);
 }
