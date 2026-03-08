@@ -99,13 +99,13 @@
       </section>
 
  <!-- OM MIG -->
-<section id="om" class="crb-section">
+<section id="om" class="crb-section crb-about">
   <div class="container">
     <div class="row g-4 align-items-start">
       
-      <!-- Vänster (nu också kort) -->
+     
       <div class="col-12 col-lg-5">
-        <div class="crb-card crb-card--soft">
+        <div class="crb-card crb-card--soft crb-aboutCard">
           <h2 class="crb-h2 mb-2">Om mig</h2>
           <p class="mb-0">
             Jag är UX-designer och frontendutvecklare med bakgrund som legitimerad lärare.
@@ -115,9 +115,9 @@
         </div>
       </div>
 
-      <!-- Höger (samma stil) -->
+    
       <div class="col-12 col-lg-7">
-        <div class="crb-card crb-card--soft">
+        <div class="crb-card crb-card--soft crb-aboutCard">
           <p class="mb-0">
             Min bakgrund gör att jag är van att förklara, förenkla och hitta kärnan i ett budskap.
             Jag lägger mycket vikt vid mikrocopy, struktur och detaljer som gör stor skillnad i användarupplevelsen.
@@ -129,7 +129,7 @@
   </div>
 </section>
 
-      <!-- PORTFOLIO (2 per rad + större kort) -->
+      <!-- PORTFOLIO -->
       <section id="portfolio" class="crb-section">
         <div class="container">
           <div class="d-flex align-items-end justify-content-between flex-wrap gap-3 mb-4">
@@ -322,46 +322,25 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <footer id="contact" class="crb-footer">
-        <div class="container">
-          <div class="row g-4 align-items-center">
-            <div class="col-12 col-md-5">
-              <h2 class="crb-h2 mb-2">Kontakt</h2>
-              <p class="crb-muted mb-0">
-                Vill du prata projekt, UX, content eller frontend? Hör av dig!
-              </p>
-            </div>
+  <!-- CONTACT -->
+<footer id="contact" class="crb-footer">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-md-5">
+        <h2 class="crb-h2 mb-0">Kontakt</h2>
+      </div>
 
-            <div class="col-12 col-md-7">
-              <div class="crb-contactCard">
-                <div class="crb-contactRow">
-                  <i class="fas fa-envelope"></i>
-                  <a class="crb-link" href="mailto:carolineroosbergman@gmail.com">
-                    carolineroosbergman@gmail.com
-                  </a>
-                </div>
-
-                <div class="crb-contactRow">
-                  <i class="fab fa-linkedin"></i>
-                  <a
-                    class="crb-link"
-                    href="https://www.linkedin.com/in/carb78654"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                </div>
-
-                <div class="crb-copyright">
-                  © <span id="crbYear"></span> Caroline Roos Bergman
-                </div>
-              </div>
-            </div>
+      <div class="col-12 col-md-7">
+        <div class="crb-contactCard crb-contactCard--mini">
+          <div class="crb-contactRow mb-0">
+            <i class="fas fa-envelope"></i>
+            <span class="crb-emailText">carolineroosbergman@gmail.com</span>
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </div>
+</footer>
     </main>
 
     <!-- PROJECT MODAL -->
@@ -415,65 +394,67 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- JS -->
     <script>
-      // Footer year
-      document.getElementById("crbYear").textContent = new Date().getFullYear();
+  // Footer year (safe)
+  const yearEl = document.getElementById("crbYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Project modal content
-      const crbProjectModal = document.getElementById("crbProjectModal");
-      if (crbProjectModal) {
-        crbProjectModal.addEventListener("show.bs.modal", (event) => {
-          const btn = event.relatedTarget;
-          if (!btn) return;
+  // Project modal content
+  const crbProjectModal = document.getElementById("crbProjectModal");
+  if (crbProjectModal) {
+    crbProjectModal.addEventListener("show.bs.modal", (event) => {
+      const btn = event.relatedTarget;
+      if (!btn) return;
 
-          const title = btn.getAttribute("data-title") || "";
-          const desc = btn.getAttribute("data-desc") || "";
-          const tech = btn.getAttribute("data-tech") || "";
-          const link = btn.getAttribute("data-link") || "";
-          const img = btn.getAttribute("data-img") || "";
+      const title = btn.getAttribute("data-title") || "";
+      const desc = btn.getAttribute("data-desc") || "";
+      const tech = btn.getAttribute("data-tech") || "";
+      const link = btn.getAttribute("data-link") || "";
+      const img = btn.getAttribute("data-img") || "";
 
-          const thinking = btn.getAttribute("data-thinking") || "";
-          const solving = btn.getAttribute("data-solving") || "";
-          const techniques = btn.getAttribute("data-techniques") || "";
+      const thinking = btn.getAttribute("data-thinking") || "";
+      const solving = btn.getAttribute("data-solving") || "";
+      const techniques = btn.getAttribute("data-techniques") || "";
 
-          document.getElementById("crbProjectTitle").textContent = title;
-          document.getElementById("crbProjectDesc").textContent = desc;
-          document.getElementById("crbProjectTech").textContent = tech;
+      document.getElementById("crbProjectTitle").textContent = title;
+      document.getElementById("crbProjectDesc").textContent = desc;
+      document.getElementById("crbProjectTech").textContent = tech;
 
-          const imgEl = document.getElementById("crbProjectImg");
-          imgEl.src = img;
-          imgEl.alt = title;
-          imgEl.classList.add("crb-modalImg--small");
+      const imgEl = document.getElementById("crbProjectImg");
+      imgEl.src = img;
+      imgEl.alt = title;
+      imgEl.classList.add("crb-modalImg--small");
 
-          const setBlock = (wrapId, textId, value) => {
-            const wrap = document.getElementById(wrapId);
-            const textEl = document.getElementById(textId);
-            if (value && value.trim().length > 0) {
-              wrap.classList.remove("d-none");
-              textEl.textContent = value;
-            } else {
-              wrap.classList.add("d-none");
-              textEl.textContent = "";
-            }
-          };
+      const setBlock = (wrapId, textId, value) => {
+        const wrap = document.getElementById(wrapId);
+        const textEl = document.getElementById(textId);
+        if (!wrap || !textEl) return;
 
-          setBlock("crbProjectThinkingWrap", "crbProjectThinking", thinking);
-          setBlock("crbProjectSolvingWrap", "crbProjectSolving", solving);
-          setBlock("crbProjectTechniquesWrap", "crbProjectTechniques", techniques);
+        if (value && value.trim().length > 0) {
+          wrap.classList.remove("d-none");
+          textEl.textContent = value;
+        } else {
+          wrap.classList.add("d-none");
+          textEl.textContent = "";
+        }
+      };
 
-          const linkWrap = document.getElementById("crbProjectLinkWrap");
-          const linkEl = document.getElementById("crbProjectLink");
+      setBlock("crbProjectThinkingWrap", "crbProjectThinking", thinking);
+      setBlock("crbProjectSolvingWrap", "crbProjectSolving", solving);
+      setBlock("crbProjectTechniquesWrap", "crbProjectTechniques", techniques);
 
-          if (link && link.trim().length > 0) {
-            linkWrap.classList.remove("d-none");
-            linkEl.href = link;
-          } else {
-            linkWrap.classList.add("d-none");
-            linkEl.removeAttribute("href");
-          }
-        });
+      const linkWrap = document.getElementById("crbProjectLinkWrap");
+      const linkEl = document.getElementById("crbProjectLink");
+
+      if (link && link.trim().length > 0) {
+        linkWrap.classList.remove("d-none");
+        linkEl.href = link;
+      } else {
+        linkWrap.classList.add("d-none");
+        linkEl.removeAttribute("href");
       }
-    </script>
+    });
+  }
+</script>
   </body>
 </html>

@@ -484,3 +484,84 @@
 .crb-project:active {
   transform: translateY(-1px);
 }
+
+/* ===== About section: lite mer visuellt ===== */
+.crb-about .crb-aboutCard{
+  position: relative;
+  padding: 22px;
+  line-height: 1.65;
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  box-shadow: 0 18px 60px rgba(17, 24, 39, 0.10);
+}
+
+/* Accent-rand (matchar din varma palette) */
+.crb-about .crb-aboutCard::before{
+  content:"";
+  position:absolute;
+  left: 14px;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(190, 126, 106, 0.65),
+    rgba(225, 175, 162, 0.45)
+  );
+}
+
+/* Liten “bubble” uppe till vänster */
+.crb-about .crb-aboutCard::after{
+  content:"";
+  position:absolute;
+  left: 6px;
+  top: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(190, 126, 106, 0.35),
+    rgba(225, 175, 162, 0.14)
+  );
+  filter: blur(0.2px);
+}
+
+/* Lite mer luft för texten inne i kortet (utan att kännas “boxig”) */
+.crb-about .crb-aboutCard h2{
+  margin-left: 18px;
+}
+
+.crb-about .crb-aboutCard p{
+  margin-left: 18px;
+}
+
+/* ===== Footer: varmare/brun ton ===== */
+.crb-footer{
+  background: linear-gradient(
+    180deg,
+    rgba(190, 126, 106, 0.10),
+    rgba(225, 175, 162, 0.06)
+  );
+  border-top: 1px solid rgba(190, 126, 106, 0.18);
+}
+
+.crb-contactCard{
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(190, 126, 106, 0.20);
+  box-shadow: 0 18px 60px rgba(17, 24, 39, 0.10);
+  backdrop-filter: blur(14px);
+}
+
+.crb-contactRow i{
+  color: rgba(190, 126, 106, 0.85);
+}
+
+.crb-link{
+  color: #1f1f1f;
+}
+
+.crb-link:hover{
+  text-decoration: underline;
+}
