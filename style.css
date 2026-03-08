@@ -610,3 +610,240 @@
     padding: 10px;
   }
 }
+
+/* =========================
+   MODERN THEME OVERRIDES
+   Lägg längst ner i style.css
+   ========================= */
+
+/* Subtilt grått istället för beige */
+.crb-body {
+  background: #ffffff;
+  color: #111827; /* slate-900 */
+}
+
+/* Lite större, modernare typografi */
+.crb-h1 { letter-spacing: -0.03em; }
+.crb-h2 { letter-spacing: -0.02em; }
+.crb-muted { color: rgba(17, 24, 39, 0.65); }
+
+/* Modern “frosted” navbar (vit) */
+.crb-header {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+/* Hover på nav – neutral */
+.crb-navlinks .nav-link:hover {
+  background: rgba(17, 24, 39, 0.06);
+  color: #111827;
+}
+
+/* Kicker: neutral pill */
+.crb-kicker {
+  background: rgba(17, 24, 39, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  color: rgba(17, 24, 39, 0.75);
+}
+
+/* Byt glow till neutral (om du vill behålla glow men inte beige) */
+.crb-photoGlow {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 55%);
+  filter: blur(26px);
+}
+
+/* “Alt section” = väldigt ljus grå istället för beige */
+.crb-section--alt {
+  background: #f8fafc; /* slate-50 */
+  border-top: 1px solid rgba(17, 24, 39, 0.06);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+/* Kort: modern border + shadow */
+.crb-card,
+.crb-skill,
+.crb-project,
+.crb-listItem,
+.crb-galleryItem,
+.crb-modal {
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+}
+
+/* Soft-card: modern neutral tint */
+.crb-card--soft {
+  background: rgba(17, 24, 39, 0.04);
+  border-color: rgba(17, 24, 39, 0.08);
+}
+
+/* Skill icon: neutral */
+.crb-skillIcon {
+  background: rgba(17, 24, 39, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.10);
+}
+.crb-skillIcon i {
+  color: rgba(17, 24, 39, 0.75);
+}
+
+/* “Läs mer” pill: neutral */
+.crb-skillMore {
+  background: rgba(17, 24, 39, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  color: rgba(17, 24, 39, 0.75);
+}
+.crb-skill:hover .crb-skillMore {
+  background: rgba(17, 24, 39, 0.08);
+  border-color: rgba(17, 24, 39, 0.14);
+}
+
+/* Hover: lite mer “premium” */
+.crb-skill:hover,
+.crb-project:hover,
+.crb-listItem:hover,
+.crb-galleryItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
+  border-color: rgba(17, 24, 39, 0.16);
+}
+
+/* Tags: modern neutralt */
+.crb-tag {
+  background: rgba(17, 24, 39, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  color: rgba(17, 24, 39, 0.75);
+}
+
+/* CTA knappar: mer “appig” */
+.crb-btn-primary {
+  background: #111827; /* slate-900 */
+  color: #fff;
+}
+.crb-btn-ghost {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(17, 24, 39, 0.14);
+}
+
+/* Footer: clean */
+.crb-footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+.crb-contactCard {
+  background: rgba(17, 24, 39, 0.04);
+  border-color: rgba(17, 24, 39, 0.08);
+}
+.crb-contactRow i { color: rgba(17, 24, 39, 0.65); }
+
+
+/* =========================
+   WARM PORTRAIT PALETTE + CRISP MODALS
+   Lägg LÄNGST NER i style.css
+   ========================= */
+
+/* --- 1) Färger som matchar din bild (terracotta/blush/cream) --- */
+:root{
+  --crb-ink: #111827;
+  --crb-border: rgba(17,24,39,0.10);
+
+  /* från din bild-ish: terracotta + blush + varm sand */
+  --crb-accent: rgba(190, 126, 106, 0.20);  /* terracotta */
+  --crb-accent-strong: rgba(190, 126, 106, 0.34);
+  --crb-blush: rgba(225, 175, 162, 0.18);   /* blush */
+  --crb-cream: rgba(255, 255, 255, 0.92);
+  --crb-glass: rgba(255, 255, 255, 0.66);
+}
+
+/* Aura bakgrund (mjuk och varm) */
+.crb-body{
+  background:
+    radial-gradient(900px 520px at 12% 6%, var(--crb-blush), transparent 58%),
+    radial-gradient(780px 520px at 88% 12%, var(--crb-accent), transparent 60%),
+    radial-gradient(900px 520px at 52% 92%, rgba(247, 232, 226, 0.55), transparent 58%),
+    #ffffff;
+  color: var(--crb-ink);
+}
+
+/* Kicker + pills med varm accent (inte blå/lila) */
+.crb-kicker{
+  background: rgba(190, 126, 106, 0.10);
+  border: 1px solid rgba(190, 126, 106, 0.18);
+  color: rgba(17,24,39,0.75);
+}
+
+.crb-skillMore{
+  background: rgba(190, 126, 106, 0.10);
+  border: 1px solid rgba(190, 126, 106, 0.18);
+  color: rgba(17,24,39,0.78);
+}
+
+/* Ikon-plattan lite varmare */
+.crb-skillIcon{
+  background: rgba(190, 126, 106, 0.10);
+  border: 1px solid rgba(190, 126, 106, 0.18);
+}
+.crb-skillIcon i{ color: rgba(17,24,39,0.70); }
+
+/* Glow bakom bilden: varm terracotta istället för blå */
+.crb-photoGlow{
+  background:
+    radial-gradient(circle at 35% 35%, rgba(190,126,106,0.22), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(225,175,162,0.18), transparent 60%);
+  filter: blur(28px);
+}
+
+/* Navbar: varm glass */
+.crb-header{
+  background: rgba(255,255,255,0.70);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(17,24,39,0.08);
+}
+
+
+/* --- 2) Gör modalerna tydliga (crisp) --- */
+/* Själva modal-rutan: mer solid, mindre “dimma” */
+.crb-modal{
+  background: var(--crb-cream);
+  backdrop-filter: blur(8px); /* mindre blur => mer läsbar */
+  border: 1px solid rgba(17,24,39,0.12);
+  box-shadow: 0 26px 80px rgba(17,24,39,0.18);
+}
+
+/* Innehållskort i modalen (listItem): gör dem solida */
+#crbSkillModal .crb-listItem{
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(17,24,39,0.12);
+  box-shadow: 0 12px 30px rgba(17,24,39,0.10);
+}
+
+/* Hover i modalen: lite mindre “flyg” men tydligt */
+#crbSkillModal .crb-listItem:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(17,24,39,0.14);
+  border-color: rgba(17,24,39,0.18);
+}
+
+/* Modalens bild: ren vit ram + mindre “busy” */
+.crb-modalImg{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(17,24,39,0.12);
+}
+
+/* (om du använder crb-modalImg--small) */
+.crb-modalImg--small{
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(17,24,39,0.12);
+}
+
+/* --- 3) Tydligare "klick" state på kort (accessibility + clarity) --- */
+.crb-skill:focus-visible,
+.crb-project:focus-visible{
+  outline: 3px solid rgba(190,126,106,0.35);
+  outline-offset: 3px;
+}
+
+/* Optional: när man klickar (active) */
+.crb-skill:active,
+.crb-project:active{
+  transform: translateY(-1px);
+}
