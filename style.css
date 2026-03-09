@@ -565,3 +565,14 @@
 .crb-link:hover{
   text-decoration: underline;
 }
+
+/* Force text color inside portfolio cards (prevents "blue" on mobile) */
+.crb-project,
+.crb-project * {
+  color: #111827;
+}
+
+/* Optional: remove iOS tap highlight (if it looks "blue/flashy") */
+.crb-project {
+  -webkit-tap-highlight-color: transparent;
+}
