@@ -201,7 +201,7 @@
 }
 
 .crb-section--alt {
-  background: #fff; /* istället för #f8fafc */
+  background: #fff; 
   border-top: 1px solid rgba(17, 24, 39, 0.06);
   border-bottom: 1px solid rgba(17, 24, 39, 0.06);
 }
@@ -315,21 +315,21 @@
   border-color: rgba(17, 24, 39, 0.16);
 }
 
-/* ✅ STÖRRE BILD I PORTFOLIO-KORTEN */
+
 .crb-projectImg {
   width: 100%;
-  height: 280px;      /* var 220px */
+  height: 280px;      
   object-fit: cover;
   display: block;
 }
 
-/* ✅ MER LUFT I TEXTEN */
+
 .crb-projectBody {
-  padding: 18px 18px 20px; /* var 14px 16px 16px */
+  padding: 18px 18px 20px; 
 }
 
 .crb-projectTitle {
-  font-size: 19px;    /* var 18px */
+  font-size: 19px;    
   font-weight: 900;
   margin-bottom: 6px;
 }
@@ -341,7 +341,7 @@
   font-size: 14px;
 }
 
-/* Gör bilderna “lite mindre” inne i kortet (clean) */
+
 .crb-projectImg--small {
   object-fit: contain;
   padding: 12px;
@@ -375,7 +375,6 @@
   background: rgba(255, 255, 255, 0.95);
 }
 
-/* Make image in Project modal smaller/clean (like the cards) */
 .crb-modalImg--small {
   object-fit: contain;
   background: rgba(255, 255, 255, 0.95);
@@ -391,7 +390,7 @@
 }
 
 .crb-contactCard {
-  background: #fff; /* istället för grå ton */
+  background: #fff; 
   border: 1px solid rgba(17, 24, 39, 0.08);
   border-radius: 18px;
   padding: 18px;
@@ -465,7 +464,7 @@
     height: 360px;
   }
 
-  /* mobil: lite lägre portfolio-bilder */
+  /* mobil */
   .crb-projectImg {
     height: 230px;
   }
@@ -485,7 +484,7 @@
   transform: translateY(-1px);
 }
 
-/* ===== About section: lite mer visuellt ===== */
+/* ===== About section ===== */
 .crb-about .crb-aboutCard{
   position: relative;
   padding: 22px;
@@ -496,7 +495,7 @@
   box-shadow: 0 18px 60px rgba(17, 24, 39, 0.10);
 }
 
-/* Accent-rand (matchar din varma palette) */
+
 .crb-about .crb-aboutCard::before{
   content:"";
   position:absolute;
@@ -512,7 +511,6 @@
   );
 }
 
-/* Liten “bubble” uppe till vänster */
 .crb-about .crb-aboutCard::after{
   content:"";
   position:absolute;
@@ -528,7 +526,6 @@
   filter: blur(0.2px);
 }
 
-/* Lite mer luft för texten inne i kortet (utan att kännas “boxig”) */
 .crb-about .crb-aboutCard h2{
   margin-left: 18px;
 }
@@ -537,7 +534,7 @@
   margin-left: 18px;
 }
 
-/* ===== Footer: varmare/brun ton ===== */
+/* Footer */
 .crb-footer{
   background: linear-gradient(
     180deg,
@@ -566,13 +563,12 @@
   text-decoration: underline;
 }
 
-/* Force text color inside portfolio cards (prevents "blue" on mobile) */
 .crb-project,
 .crb-project * {
   color: #111827;
 }
 
-/* Optional: remove iOS tap highlight (if it looks "blue/flashy") */
+
 .crb-project {
   -webkit-tap-highlight-color: transparent;
 }
